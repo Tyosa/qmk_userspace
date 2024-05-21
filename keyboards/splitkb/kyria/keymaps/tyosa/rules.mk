@@ -6,6 +6,7 @@ EXTRAFLAGS += -flto
 LTO_ENABLE = yes
 WPM_ENABLE = yes
 DEFERRED_EXEC_ENABLE = yes
+TAP_DANCE_ENABLE = yes
 
 # Inclusions
 SRC += tyosa.c
