@@ -5,8 +5,6 @@ enum layers {
     _COLEMAK_DH = 0,
     _NAV,
     _SYM,
-    _FUN,
-    _MEDIA,
     _NUM
 };
 
@@ -16,16 +14,15 @@ enum custom_keycodes {
     QC_AGRV,                    // à
     QC_CCED,                    // ç
     QC_UGRV,                    // ù
-    QC_ICRC,                    // î
-    QC_OCRC,                    // ù
     KC_LEFT_ENC_MODE,           // left encoder mode
     KC_RIGHT_ENC_MODE,          // right encoder mode
-    ALT_TAB,                    // alt-tab
-    QC_QUOT,                    // non-dead simple quote
-    QC_BACK,
-    QC_NEXT,
-    QC_PTAB,
-    QC_NTAB,
+    QC_QUOT,                    // non-dead quotes
+};
+
+enum tap_dance_codes {
+    COM_MIN, // , -
+    DOT_UND, // . _
+    SLS_EXC, // / !
 };
 
 typedef struct _master_to_slave_t {
@@ -34,6 +31,7 @@ typedef struct _master_to_slave_t {
 } master_to_slave_t;
 
 // Custom actions
+//todo reuse copy,paste,cut,redo,undo ? on nav layer ?
 #define     COPY    LCTL(KC_C)
 #define    PASTE    LCTL(KC_V)
 #define      CUT    LCTL(KC_X)
@@ -41,6 +39,10 @@ typedef struct _master_to_slave_t {
 #define     UNDO    LCTL(KC_Z)
 #define  KC_LENC    LT(0, KC_LEFT_ENC_MODE)     // Left encoder
 #define  KC_RENC    LT(0, KC_RIGHT_ENC_MODE)    // Right encoder
+#define     PTAB    LCTL(LSFT(KC_TAB))          // Previous tab
+#define     NTAB    LCTL(KC_TAB)                // Next tab
+#define     PREV    LALT(KC_LEFT)               // Previous page
+#define     NEXT    LALT(KC_RIGHT)              // Next page
 
 // Mods
 #define    HR_GA    LGUI_T(KC_A)
@@ -51,19 +53,9 @@ typedef struct _master_to_slave_t {
 #define    HR_CE    LCTL_T(KC_E)
 #define    HR_AI    LALT_T(KC_I)
 #define    HR_GO    LGUI_T(KC_O)
-#define    HR_SL    LSFT_T(KC_UP)
-#define    HR_CD    LCTL_T(KC_DOWN)
 #define  OS_LSFT    OSM(MOD_LSFT)
 #define  OS_LCTL    OSM(MOD_LCTL)
 #define  MEH_SPC    MT(MOD_MEH, KC_SPC)
-
-// Thumb tap/hold
-#define  MEH_GUI    MEH_T(KC_LGUI)
-#define  MED_ESC    LT(_MEDIA, KC_ESC)
-#define  NAV_SPC    LT(_NAV, KC_SPC)
-#define  SYM_ENT    LT(_SYM, KC_ENT)
-#define  NUM_BSP    LT(_NUM, KC_BSPC)
-#define  FUN_DEL    LT(_FUN, KC_DEL)
 
 // Layer toggle
 #define   QC_NAV    TG(_NAV)
