@@ -66,3 +66,5 @@ typedef struct _master_to_slave_t {
 
 extern bool is_alt_tab_active;
 extern uint16_t alt_tab_timer;
+
+
