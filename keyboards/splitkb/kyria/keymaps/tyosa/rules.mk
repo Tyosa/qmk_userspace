@@ -13,6 +13,7 @@ SRC += tyosa.c
 SRC += encoder.c
 SRC += oled.c
 SRC += luna.c
+SRC += tap_dances.c
 
 # AVR optimizations
 RGB_MATRIX_ENABLE = no

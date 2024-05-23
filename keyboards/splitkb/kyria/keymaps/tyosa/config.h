@@ -24,6 +24,9 @@
 #define SPLIT_TRANSACTION_IDS_USER USER_SYNC_LUNA
 #define SPLIT_LED_STATE_ENABLE
 
+#define ONESHOT_TAP_TOGGLE 4
+#define ONESHOT_TIMEOUT 1500
+
 // Bilateral combinations, following https://sunaku.github.io/home-row-mods.html
 #define BILATERAL_COMBINATIONS
 #define BILATERAL_COMBINATIONS_ALLOW_SAMESIDED_AFTER 200 /*ms*/
@@ -36,11 +39,8 @@
 // Space optimizations
 #define LAYER_STATE_8BIT
 
-#define NO_ACTION_MACRO
-#define NO_ACTION_FUNCTION
 #define DISABLE_LEADER
 
-#define NO_ACTION_ONESHOT
 #define NO_MUSIC_MODE
 
 #undef LOCKING_SUPPORT_ENABLE
