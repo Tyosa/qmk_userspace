@@ -1,20 +1,29 @@
+#pragma once
 #include "tyosa.h"
-#include "tap_dances.h"
 
-// COM_MIN tap dance : single tap comma, hold minus
+enum tap_dance_id {
+    TD_COM_MIN,
+    TD_DOT_UND,
+    TD_SLS_EXC,
+    TD_Z_TAB,
+};
+
+// Actions for the TD_COM_MIN tap dance, comma on press and minus on hold
 void on_com_min(tap_dance_state_t *state, void *user_data);
-uint8_t com_min_dance_step(tap_dance_state_t *state);
 void com_min_finished(tap_dance_state_t *state, void *user_data);
 void com_min_reset(tap_dance_state_t *state, void *user_data);
 
-// DOT_UND tap dance : single tap dot, hold underscore
-void on_dot_und(tap_dance_state_t *statex, void *user_data);
-uint8_t dot_und_dance_step(tap_dance_state_t *state);
+// Actions for the TD_DOT_UND tap dance, dot on press and underscore on hold
+void on_dot_und(tap_dance_state_t *state, void *user_data);
 void dot_und_finished(tap_dance_state_t *state, void *user_data);
 void dot_und_reset(tap_dance_state_t *state, void *user_data);
 
-// SLS_EXC tap dance : single tap slash, hold exclamation point
-void on_sls_exc(tap_dance_state_t *statex, void *user_data);
-uint8_t sls_exc_dance_step(tap_dance_state_t *state);
+// Actions for the TD_SLS_EXC tap dance, slash on press and exclamation mark on hold
+void on_sls_exc(tap_dance_state_t *state, void *user_data);
 void sls_exc_finished(tap_dance_state_t *state, void *user_data);
 void sls_exc_reset(tap_dance_state_t *state, void *user_data);
+
+// Actions for the TD_Z tap dance, tab on press and z on hold
+void on_z_tab(tap_dance_state_t *state, void *user_data);
+void z_tab_finished(tap_dance_state_t *state, void *user_data);
+void z_tab_reset(tap_dance_state_t *state, void *user_data);
