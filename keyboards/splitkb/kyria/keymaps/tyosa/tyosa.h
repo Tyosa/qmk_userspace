@@ -1,5 +1,6 @@
 #pragma once
 #include QMK_KEYBOARD_H
+#include "tap_dances.h"
 
 enum layers {
     _COLEMAK_DH = 0,
@@ -16,12 +17,6 @@ enum custom_keycodes {
     KC_LEFT_ENC_MODE,           // left encoder mode
     KC_RIGHT_ENC_MODE,          // right encoder mode
     QC_QUOT,                    // non-dead quotes
-};
-
-enum tap_dance_codes {
-    TD_COM_MIN, // , -
-    TD_DOT_UND, // . _
-    TD_SLS_EXC, // / !
 };
 
 typedef struct _master_to_slave_t {
@@ -61,6 +56,7 @@ typedef struct _master_to_slave_t {
 #define  COM_MIN    TD(TD_COM_MIN)
 #define  DOT_UND    TD(TD_DOT_UND)
 #define  SLS_EXC    TD(TD_SLS_EXC)
+#define    Z_TAB    TD(TD_Z_TAB)
 
 extern bool is_alt_tab_active;
 extern uint16_t alt_tab_timer;
