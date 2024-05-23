@@ -13,16 +13,15 @@ enum custom_keycodes {
     QC_EAIG,                    // é
     QC_AGRV,                    // à
     QC_CCED,                    // ç
-    QC_UGRV,                    // ù
     KC_LEFT_ENC_MODE,           // left encoder mode
     KC_RIGHT_ENC_MODE,          // right encoder mode
     QC_QUOT,                    // non-dead quotes
 };
 
 enum tap_dance_codes {
-    COM_MIN, // , -
-    DOT_UND, // . _
-    SLS_EXC, // / !
+    TD_COM_MIN, // , -
+    TD_DOT_UND, // . _
+    TD_SLS_EXC, // / !
 };
 
 typedef struct _master_to_slave_t {
@@ -31,12 +30,7 @@ typedef struct _master_to_slave_t {
 } master_to_slave_t;
 
 // Custom actions
-//todo reuse copy,paste,cut,redo,undo ? on nav layer ?
-#define     COPY    LCTL(KC_C)
-#define    PASTE    LCTL(KC_V)
-#define      CUT    LCTL(KC_X)
-#define     REDO    LCTL(KC_Y)
-#define     UNDO    LCTL(KC_Z)
+
 #define  KC_LENC    LT(0, KC_LEFT_ENC_MODE)     // Left encoder
 #define  KC_RENC    LT(0, KC_RIGHT_ENC_MODE)    // Right encoder
 #define     PTAB    LCTL(LSFT(KC_TAB))          // Previous tab
@@ -63,6 +57,10 @@ typedef struct _master_to_slave_t {
 #define      SYM    TO(_SYM)
 #define      NUM    TO(_NUM)
 #define      NAV    TO(_NAV)
+
+#define  COM_MIN    TD(TD_COM_MIN)
+#define  DOT_UND    TD(TD_DOT_UND)
+#define  SLS_EXC    TD(TD_SLS_EXC)
 
 extern bool is_alt_tab_active;
 extern uint16_t alt_tab_timer;
