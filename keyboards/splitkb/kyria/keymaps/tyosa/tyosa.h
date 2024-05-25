@@ -57,6 +57,7 @@ typedef struct _master_to_slave_t {
 #define  DOT_UND    TD(TD_DOT_UND)
 #define  SLS_EXC    TD(TD_SLS_EXC)
 #define    Z_TAB    TD(TD_Z_TAB)
+#define    Q_ESC    TD(TD_Q_ESC)
 
 extern bool is_alt_tab_active;
 extern uint16_t alt_tab_timer;
