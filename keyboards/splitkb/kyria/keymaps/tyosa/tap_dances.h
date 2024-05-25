@@ -6,6 +6,9 @@ enum tap_dance_id {
     TD_DOT_UND,
     TD_SLS_EXC,
     TD_Z_TAB,
+    TD_Q_ESC,
+    TD_J_ENT,
+    TD_M_BSP
 };
 
 // Actions for the TD_COM_MIN tap dance, comma on press and minus on hold
@@ -23,7 +26,23 @@ void on_sls_exc(tap_dance_state_t *state, void *user_data);
 void sls_exc_finished(tap_dance_state_t *state, void *user_data);
 void sls_exc_reset(tap_dance_state_t *state, void *user_data);
 
-// Actions for the TD_Z tap dance, tab on press and z on hold
+// Actions for the TD_Z_TAB tap dance, tab on press and z on hold
 void on_z_tab(tap_dance_state_t *state, void *user_data);
 void z_tab_finished(tap_dance_state_t *state, void *user_data);
 void z_tab_reset(tap_dance_state_t *state, void *user_data);
+
+// Actions for the TD_Q_ESC tap dance, q on press and escape on hold
+void on_q_esc(tap_dance_state_t *state, void *user_data);
+void q_esc_finished(tap_dance_state_t *state, void *user_data);
+void q_esc_reset(tap_dance_state_t *state, void *user_data);
+
+// Actions for the TD_J_ENT tap dance, j on press and enter on hold
+void on_j_ent(tap_dance_state_t *state, void *user_data);
+void j_ent_finished(tap_dance_state_t *state, void *user_data);
+void j_ent_reset(tap_dance_state_t *state, void *user_data);
+
+// Actions for the TD_M_BSP tap dance, m on press and backspace on hold
+void on_m_bsp(tap_dance_state_t *state, void *user_data);
+void m_bsp_finished(tap_dance_state_t *state, void *user_data);
+void m_bsp_reset(tap_dance_state_t *state, void *user_data);
+

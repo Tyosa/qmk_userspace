@@ -5,7 +5,7 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK_DH] = LAYOUT(
-            XXXXXXX,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, XXXXXXX,
+            XXXXXXX,   Q_ESC,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, XXXXXXX,
             XXXXXXX,   HR_GA,   HR_AR,   HR_CS,   HR_ST,    KC_G,                                        KC_M,   HR_SN,   HR_CE,   HR_AI,   HR_GO, XXXXXXX,
             XXXXXXX,   Z_TAB,    KC_X,    KC_C,    KC_D,    KC_V, XXXXXXX, KC_LENC, KC_RENC, XXXXXXX,    KC_K,    KC_H, COM_MIN, DOT_UND, SLS_EXC, XXXXXXX,
                                        XXXXXXX, XXXXXXX, XXXXXXX, MEH_SPC, OS_LSFT, OS_LCTL,     SYM, XXXXXXX, XXXXXXX, XXXXXXX
@@ -103,5 +103,6 @@ tap_dance_action_t tap_dance_actions[] = {
   [TD_DOT_UND] = ACTION_TAP_DANCE_FN_ADVANCED(on_dot_und, dot_und_finished, dot_und_reset),
   [TD_SLS_EXC] = ACTION_TAP_DANCE_FN_ADVANCED(on_sls_exc, sls_exc_finished, sls_exc_reset),
   [TD_Z_TAB] = ACTION_TAP_DANCE_FN_ADVANCED(on_z_tab, z_tab_finished, z_tab_reset),
+  [TD_Q_ESC] = ACTION_TAP_DANCE_FN_ADVANCED(on_q_esc, q_esc_finished, q_esc_reset),
 };
 
