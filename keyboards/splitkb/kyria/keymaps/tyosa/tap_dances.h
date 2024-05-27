@@ -8,7 +8,8 @@ enum tap_dance_id {
     TD_Z_TAB,
     TD_Q_ESC,
     TD_J_ENT,
-    TD_M_BSP
+    TD_M_BSP,
+    TD_V_DEL,
 };
 
 // Actions for the TD_COM_MIN tap dance, comma on press and minus on hold
@@ -46,3 +47,7 @@ void on_m_bsp(tap_dance_state_t *state, void *user_data);
 void m_bsp_finished(tap_dance_state_t *state, void *user_data);
 void m_bsp_reset(tap_dance_state_t *state, void *user_data);
 
+// Actions for the TD_V_DEL tap dance, v on press and delete on hold
+void on_v_del(tap_dance_state_t *state, void *user_data);
+void v_del_finished(tap_dance_state_t *state, void *user_data);
+void v_del_reset(tap_dance_state_t *state, void *user_data);
