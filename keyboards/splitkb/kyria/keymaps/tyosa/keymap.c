@@ -96,6 +96,11 @@ void matrix_scan_user(void) {
       is_alt_tab_active = false;
     }
   }
+  if (get_highest_layer(layer_state) != _COLEMAK_DH) {
+      if (last_input_activity_elapsed() > LAYER_TIMEOUT) {
+          layer_move(_COLEMAK_DH);
+      }
+  }
 }
 
 tap_dance_action_t tap_dance_actions[] = {
