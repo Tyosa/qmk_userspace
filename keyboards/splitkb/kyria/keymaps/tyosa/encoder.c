@@ -1,4 +1,3 @@
-#include "quantum.h"
 #include "tyosa.h"
 
 enum left_encoder_mode {

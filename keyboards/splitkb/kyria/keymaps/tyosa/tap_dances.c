@@ -1,5 +1,10 @@
-#include "tyosa.h"
 #include "tap_dances.h"
+
+tap_dance_action_t tap_dance_actions[] = {
+  [TD_COM_MIN] = ACTION_TAP_DANCE_FN_ADVANCED(on_com_min, com_min_finished, com_min_reset),
+  [TD_DOT_UND] = ACTION_TAP_DANCE_FN_ADVANCED(on_dot_und, dot_und_finished, dot_und_reset),
+  [TD_SLS_EXC] = ACTION_TAP_DANCE_FN_ADVANCED(on_sls_exc, sls_exc_finished, sls_exc_reset),
+};
 
 typedef enum {
     NONE,
@@ -34,7 +39,6 @@ td_state_t cur_dance(tap_dance_state_t *state) {
 }
 
 /* single_hold_or_tap : hold hold_code on single hold, else tap tap_code (if held after tapping, hold tap_code) */
-
 void on_single_hold_or_tap(tap_dance_state_t *state, uint16_t tap_code) {
     if (state->count == 3) {
         tap_code16(tap_code);
@@ -125,62 +129,3 @@ void sls_exc_reset(tap_dance_state_t *state, void *user_data) {
     single_hold_or_tap_reset(state, KC_SLSH, KC_EXLM);
 }
 
-void on_z_tab(tap_dance_state_t *state, void *user_data) {
-    on_single_hold_or_tap(state, KC_Z);
-}
-
-void z_tab_finished(tap_dance_state_t *state, void *user_data) {
-    single_hold_or_tap_finished(state, KC_Z, KC_TAB);
-}
-
-void z_tab_reset(tap_dance_state_t *state, void *user_data) {
-    single_hold_or_tap_reset(state, KC_Z, KC_TAB);
-}
-
-void on_q_esc(tap_dance_state_t *state, void *user_data) {
-    on_single_hold_or_tap(state, KC_Q);
-}
-
-void q_esc_finished(tap_dance_state_t *state, void *user_data) {
-    single_hold_or_tap_finished(state, KC_Q, KC_ESC);
-}
-
-void q_esc_reset(tap_dance_state_t *state, void *user_data) {
-    single_hold_or_tap_reset(state, KC_Q, KC_ESC);
-}
-
-void on_j_ent(tap_dance_state_t *state, void *user_data) {
-    on_single_hold_or_tap(state, KC_J);
-}
-
-void j_ent_finished(tap_dance_state_t *state, void *user_data) {
-    single_hold_or_tap_finished(state, KC_J, KC_ENT);
-}
-
-void j_ent_reset(tap_dance_state_t *state, void *user_data) {
-    single_hold_or_tap_reset(state, KC_J, KC_ENT);
-}
-
-void on_m_bsp(tap_dance_state_t *state, void *user_data) {
-    on_single_hold_or_tap(state, KC_M);
-}
-
-void m_bsp_finished(tap_dance_state_t *state, void *user_data) {
-    single_hold_or_tap_finished(state, KC_M, KC_BSPC);
-}
-
-void m_bsp_reset(tap_dance_state_t *state, void *user_data) {
-    single_hold_or_tap_reset(state, KC_M, KC_BSPC);
-}
-
-void on_v_del(tap_dance_state_t *state, void *user_data) {
-    on_single_hold_or_tap(state, KC_V);
-}
-
-void v_del_finished(tap_dance_state_t *state, void *user_data) {
-    single_hold_or_tap_finished(state, KC_V, KC_DEL);
-}
-
-void v_del_reset(tap_dance_state_t *state, void *user_data) {
-    single_hold_or_tap_reset(state, KC_V, KC_DEL);
-}
