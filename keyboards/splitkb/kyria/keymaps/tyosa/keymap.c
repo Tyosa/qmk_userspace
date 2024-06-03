@@ -14,19 +14,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             XXXXXXX, KC_PERC,   KC_AT, KC_HASH,  KC_DLR, XXXXXXX,                                     XXXXXXX, KC_AMPR, KC_ASTR,  KC_GRV, KC_CIRC, XXXXXXX,
             XXXXXXX, QC_AGRV, QC_EGRV, QC_EAIG, XXXXXXX, XXXXXXX,                                     XXXXXXX, KC_LBRC, KC_LPRN, KC_RPRN, KC_RBRC, XXXXXXX,
             XXXXXXX, XXXXXXX, XXXXXXX, QC_CCED, XXXXXXX, XXXXXXX, XXXXXXX, KC_LENC, KC_RENC, XXXXXXX, QC_QUOT, KC_BSLS, KC_LCBR, KC_RCBR,     NAV,  KC_DEL,
-                                       XXXXXXX, XXXXXXX,  KC_ESC, COLEMAK,  KC_TAB,  KC_ENT, KC_BSPC,     NUM, XXXXXXX, XXXXXXX
+                                       XXXXXXX, XXXXXXX,  KC_ESC, COLEMAK,  TH_ST,  TH_CE, TH_AB,     NUM, XXXXXXX, XXXXXXX
             ),
     [_NAV] = LAYOUT(
             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                     XXXXXXX, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, XXXXXXX,
             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LENC, KC_RENC, XXXXXXX, XXXXXXX, KC_HOME, XXXXXXX, XXXXXXX,  KC_END,  KC_DEL,
-                                       XXXXXXX, XXXXXXX,  KC_ESC, COLEMAK,  KC_TAB,  KC_ENT, KC_BSPC,     SYM, XXXXXXX, XXXXXXX
+                                       XXXXXXX, XXXXXXX,  KC_ESC, COLEMAK,  TH_ST,  TH_CE, TH_AB,     SYM, XXXXXXX, XXXXXXX
             ),
     [_NUM] = LAYOUT(
             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                     KC_PAST,    KC_7,    KC_8,    KC_9, KC_MINS, XXXXXXX,
             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                     KC_PDOT,    KC_4,    KC_5,    KC_6,  KC_EQL, XXXXXXX,
             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LENC, KC_RENC, XXXXXXX,    KC_0,    KC_1,    KC_2,    KC_3,     NAV,  KC_DEL,
-                                       XXXXXXX, XXXXXXX,  KC_ESC, COLEMAK,  KC_TAB,  KC_ENT, KC_BSPC,     SYM, XXXXXXX, XXXXXXX
+                                       XXXXXXX, XXXXXXX,  KC_ESC, COLEMAK,  TH_ST,  TH_CE, TH_AB,     SYM, XXXXXXX, XXXXXXX
             ),
 };
 

@@ -19,7 +19,7 @@ enum custom_keycodes {
     QC_QUOT,                    // non-dead quotes
 };
 
-// Mods
+// Home-row mods
 #define    HR_GA    LGUI_T(KC_A)
 #define    HR_AR    LALT_T(KC_R)
 #define    HR_CS    LCTL_T(KC_S)
@@ -28,7 +28,12 @@ enum custom_keycodes {
 #define    HR_CE    LCTL_T(KC_E)
 #define    HR_AI    LALT_T(KC_I)
 #define    HR_GO    LGUI_T(KC_O)
+
+// Thumb modifiers
 #define  MEH_SPC    MT(MOD_MEH, KC_SPC)
+#define    TH_ST    LSFT_T(KC_TAB)
+#define    TH_CE    LCTL_T(KC_ENT)
+#define    TH_AB    LALT_T(KC_BSPC)
 
 // Layer toggle
 #define  COLEMAK    TO(_COLEMAK_DH)
