@@ -15,10 +15,12 @@ bool oled_task_user(void) {
             case _SYM:
                 oled_write_P(PSTR("Sym\n"), false);
                 break;
+            case _NUM:
+                oled_write_P(PSTR("Num\n"), false);
+                break;
             default:
                 oled_write_P(PSTR("Undefined\n"), false);
         }
-
 
         oled_write_P(PSTR("Left: "), false);
         left_encoder_oled();
