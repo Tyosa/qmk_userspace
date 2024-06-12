@@ -28,6 +28,14 @@ enum custom_keycodes {
 #define    HR_CE    LCTL_T(KC_E)
 #define    HR_AI    LALT_T(KC_I)
 #define    HR_GO    LGUI_T(KC_O)
+#define   HR_GF5    LGUI_T(KC_F5)
+#define   HR_AF6    LALT_T(KC_F6)
+#define   HR_CF7    LCTL_T(KC_F7)
+#define   HR_SF8    LSFT_T(KC_F8)
+#define    HR_S4    LSFT_T(KC_4)
+#define    HR_C5    LCTL_T(KC_5)
+#define    HR_A6    LALT_T(KC_6)
+#define   HR_GEQ    LGUI_T(KC_EQL)
 
 // Thumb modifiers
 #define  MEH_SPC    MT(MOD_MEH, KC_SPC)
