@@ -37,8 +37,6 @@ enum custom_keycodes {
 #define    HR_A6    LALT_T(KC_6)
 #define   HR_GEQ    LGUI_T(KC_EQL)
 #define   HR_SLB    LSFT_T(KC_LBRC)
-#define   HR_CLP    LCTL_T(KC_LPRN)
-#define   HR_ARP    LALT_T(KC_RPRN)
 #define   HR_GRB    LGUI_T(KC_RBRC)
 
 // Thumb modifiers

@@ -8,7 +8,9 @@ enum tap_dance_id {
     TD_C_COPY,
     TD_V_PASTE,
     TD_X_CUT,
-    TD_Z_UNDO
+    TD_Z_UNDO,
+    TD_LPRN_CTL,
+    TD_RPRN_ALT
 };
 
 #define  COM_MIN    TD(TD_COM_MIN)
@@ -18,6 +20,8 @@ enum tap_dance_id {
 #define  V_PASTE    TD(TD_V_PASTE)
 #define   X_CUTS    TD(TD_X_CUT)
 #define   Z_UNDO    TD(TD_Z_UNDO)
+#define   HR_CLP    TD(TD_LPRN_CTL)
+#define   HR_ARP    TD(TD_RPRN_ALT)
 
 // Actions for the TD_COM_MIN tap dance, comma on press and minus on hold
 void on_com_min(tap_dance_state_t *state, void *user_data);
@@ -53,3 +57,13 @@ void x_cut_reset(tap_dance_state_t *state, void *user_data);
 void on_z_undo(tap_dance_state_t *state, void *user_data);
 void z_undo_finished(tap_dance_state_t *state, void *user_data);
 void z_undo_reset(tap_dance_state_t *state, void *user_data);
+
+// Actions for the TD_LPRN_CTL tap dance, ( on press and Ctrl on hold
+void on_lprn_ctl(tap_dance_state_t *state, void *user_data);
+void lprn_ctl_finished(tap_dance_state_t *state, void *user_data);
+void lprn_ctl_reset(tap_dance_state_t *state, void *user_data);
+
+// Actions for the TD_RPRN_ALT tap dance, ) on press and Alt on hold
+void on_rprn_alt(tap_dance_state_t *state, void *user_data);
+void rprn_alt_finished(tap_dance_state_t *state, void *user_data);
+void rprn_alt_reset(tap_dance_state_t *state, void *user_data);
