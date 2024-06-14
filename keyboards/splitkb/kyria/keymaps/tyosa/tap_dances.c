@@ -4,6 +4,10 @@ tap_dance_action_t tap_dance_actions[] = {
   [TD_COM_MIN] = ACTION_TAP_DANCE_FN_ADVANCED(on_com_min, com_min_finished, com_min_reset),
   [TD_DOT_UND] = ACTION_TAP_DANCE_FN_ADVANCED(on_dot_und, dot_und_finished, dot_und_reset),
   [TD_SLS_EXC] = ACTION_TAP_DANCE_FN_ADVANCED(on_sls_exc, sls_exc_finished, sls_exc_reset),
+  [TD_C_COPY] = ACTION_TAP_DANCE_FN_ADVANCED(on_c_copy, c_copy_finished, c_copy_reset),
+  [TD_V_PASTE] = ACTION_TAP_DANCE_FN_ADVANCED(on_v_paste, v_paste_finished, v_paste_reset),
+  [TD_X_CUT] = ACTION_TAP_DANCE_FN_ADVANCED(on_x_cut, x_cut_finished, x_cut_reset),
+  [TD_Z_UNDO] = ACTION_TAP_DANCE_FN_ADVANCED(on_z_undo, z_undo_finished, z_undo_reset),
 };
 
 typedef enum {
@@ -129,3 +133,50 @@ void sls_exc_reset(tap_dance_state_t *state, void *user_data) {
     single_hold_or_tap_reset(state, KC_SLSH, KC_EXLM);
 }
 
+void on_c_copy(tap_dance_state_t *state, void *user_data) {
+    on_single_hold_or_tap(state, KC_C);
+}
+
+void c_copy_finished(tap_dance_state_t *state, void *user_data) {
+    single_hold_or_tap_finished(state, KC_C, C(KC_C));
+}
+
+void c_copy_reset(tap_dance_state_t *state, void *user_data) {
+    single_hold_or_tap_reset(state, KC_C, C(KC_C));
+}
+
+void on_v_paste(tap_dance_state_t *state, void *user_data) {
+    on_single_hold_or_tap(state, KC_V);
+}
+
+void v_paste_finished(tap_dance_state_t *state, void *user_data) {
+    single_hold_or_tap_finished(state, KC_V, C(KC_V));
+}
+
+void v_paste_reset(tap_dance_state_t *state, void *user_data) {
+    single_hold_or_tap_reset(state, KC_V, C(KC_V));
+}
+
+void on_x_cut(tap_dance_state_t *state, void *user_data) {
+    on_single_hold_or_tap(state, KC_X);
+}
+
+void x_cut_finished(tap_dance_state_t *state, void *user_data) {
+    single_hold_or_tap_finished(state, KC_X, C(KC_X));
+}
+
+void x_cut_reset(tap_dance_state_t *state, void *user_data) {
+    single_hold_or_tap_reset(state, KC_X, C(KC_X));
+}
+
+void on_z_undo(tap_dance_state_t *state, void *user_data) {
+    on_single_hold_or_tap(state, KC_Z);
+}
+
+void z_undo_finished(tap_dance_state_t *state, void *user_data) {
+    single_hold_or_tap_finished(state, KC_Z, C(KC_Z));
+}
+
+void z_undo_reset(tap_dance_state_t *state, void *user_data) {
+    single_hold_or_tap_reset(state, KC_Z, C(KC_Z));
+}
