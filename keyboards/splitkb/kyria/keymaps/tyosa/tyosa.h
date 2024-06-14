@@ -1,6 +1,5 @@
 #pragma once
 #include QMK_KEYBOARD_H
-#include "tap_dances.h"
 
 enum layers {
     _COLEMAK_DH = 0,
