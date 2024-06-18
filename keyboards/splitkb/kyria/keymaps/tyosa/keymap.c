@@ -18,9 +18,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                        XXXXXXX, XXXXXXX,  KC_ESC, COLEMAK,  KC_TAB,  KC_ENT, KC_BSPC,     NUM, XXXXXXX, XXXXXXX
             ),
     [_NAV] = LAYOUT(
-            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-            XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                                     XXXXXXX, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, XXXXXXX,
-            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LENC, KC_RENC, XXXXXXX, XXXXXXX, KC_HOME, XXXXXXX, XXXXXXX,  KC_END,  KC_DEL,
+            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                     XXXXXXX, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, XXXXXXX,
+            XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                                     KC_HOME, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT,  KC_END,
+            XXXXXXX, XXXXXXX, KC_BTN2, KC_BTN3, KC_BTN1, XXXXXXX, XXXXXXX, KC_LENC, KC_RENC, XXXXXXX, XXXXXXX, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,  KC_DEL,
                                        XXXXXXX, XXXXXXX,  KC_ESC, COLEMAK,  KC_TAB,  KC_ENT, KC_BSPC,     SYM, XXXXXXX, XXXXXXX
             ),
     [_NUM] = LAYOUT(
