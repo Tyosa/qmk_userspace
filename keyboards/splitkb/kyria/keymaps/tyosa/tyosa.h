@@ -15,7 +15,6 @@ enum custom_keycodes {
     QC_CCED,                    // ç
     KC_LEFT_ENC_MODE,           // left encoder mode
     KC_RIGHT_ENC_MODE,          // right encoder mode
-    QC_QUOT,                    // non-dead quotes
 };
 
 // Home-row mods

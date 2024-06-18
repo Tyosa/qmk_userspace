@@ -1,4 +1,5 @@
 #include "tap_dances.h"
+#include "macros.h"
 
 tap_dance_action_t tap_dance_actions[] = {
   [TD_COM_MIN] = ACTION_TAP_DANCE_FN_ADVANCED(on_com_min, com_min_finished, com_min_reset),
@@ -10,6 +11,7 @@ tap_dance_action_t tap_dance_actions[] = {
   [TD_Z_UNDO] = ACTION_TAP_DANCE_FN_ADVANCED(on_z_undo, z_undo_finished, z_undo_reset),
   [TD_LPRN_CTL] = ACTION_TAP_DANCE_FN_ADVANCED(on_lprn_ctl, lprn_ctl_finished, lprn_ctl_reset),
   [TD_RPRN_ALT] = ACTION_TAP_DANCE_FN_ADVANCED(on_rprn_alt, rprn_alt_finished, rprn_alt_reset),
+  [TD_H_QUOTE] = ACTION_TAP_DANCE_FN_ADVANCED(on_h_quote, h_quote_finished, h_quote_reset),
 };
 
 typedef enum {
@@ -90,7 +92,7 @@ void single_hold_or_tap_reset(tap_dance_state_t *state, uint16_t tap_code, uint1
             unregister_code16(tap_code);
             break;
         case DOUBLE_SINGLE_TAP:
-            unregister_code16(hold_code);
+            unregister_code16(tap_code);
             break;
         default :
             break;
@@ -205,4 +207,47 @@ void rprn_alt_finished(tap_dance_state_t *state, void *user_data) {
 
 void rprn_alt_reset(tap_dance_state_t *state, void *user_data) {
     single_hold_or_tap_reset(state, KC_RPRN, KC_LALT);
+}
+
+void on_h_quote(tap_dance_state_t *state, void *user_data) {
+    on_single_hold_or_tap(state, KC_H);
+}
+
+void h_quote_finished(tap_dance_state_t *state, void *user_data) {
+    dance_state.step = cur_dance(state);
+    switch (dance_state.step) {
+        case SINGLE_TAP:
+            register_code16(KC_H);
+            break;
+        case SINGLE_HOLD:
+            function_quick_quote();
+            break;
+        case DOUBLE_TAP:
+            register_code16(KC_H);
+            register_code16(KC_H);
+            break;
+        case DOUBLE_SINGLE_TAP:
+            tap_code16(KC_H);
+            register_code16(KC_H);
+            break;
+        default :
+            break;
+    }
+}
+
+void h_quote_reset(tap_dance_state_t *state, void *user_data) {
+    switch (dance_state.step) {
+        case SINGLE_TAP:
+            unregister_code16(KC_H);
+            break;
+        case DOUBLE_TAP:
+            unregister_code16(KC_H);
+            break;
+        case DOUBLE_SINGLE_TAP:
+            unregister_code16(KC_H);
+            break;
+        default :
+            break;
+    }
+    dance_state.step = NONE;
 }

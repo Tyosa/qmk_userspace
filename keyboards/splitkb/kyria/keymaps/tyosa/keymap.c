@@ -8,13 +8,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK_DH] = LAYOUT(
             XXXXXXX,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, XXXXXXX,
             XXXXXXX,   HR_GA,   HR_AR,   HR_CS,   HR_ST,    KC_G,                                        KC_M,   HR_SN,   HR_CE,   HR_AI,   HR_GO, XXXXXXX,
-            XXXXXXX,  Z_UNDO,  X_CUTS,  C_COPY,    KC_D, V_PASTE, XXXXXXX, KC_LENC, KC_RENC, XXXXXXX,    KC_K,    KC_H, COM_MIN, DOT_UND, SLS_EXC,  KC_DEL,
+            XXXXXXX,  Z_UNDO,  X_CUTS,  C_COPY,    KC_D, V_PASTE, XXXXXXX, KC_LENC, KC_RENC, XXXXXXX,    KC_K, H_QUOTE, COM_MIN, DOT_UND, SLS_EXC,  KC_DEL,
                                        XXXXXXX, XXXXXXX,  KC_ESC, MEH_SPC,  KC_TAB,  KC_ENT, KC_BSPC,     SYM, XXXXXXX, XXXXXXX
             ),
     [_SYM] = LAYOUT(
             XXXXXXX, KC_PERC,   KC_AT, KC_HASH,  KC_DLR, XXXXXXX,                                     XXXXXXX, KC_AMPR, KC_ASTR,  KC_GRV, KC_CIRC, XXXXXXX,
-            XXXXXXX, QC_AGRV, QC_EGRV, QC_EAIG, XXXXXXX, XXXXXXX,                                     XXXXXXX,  HR_SLB,  HR_CLP,  HR_ARP,  HR_GRB, XXXXXXX,
-            XXXXXXX, XXXXXXX, XXXXXXX, QC_CCED, XXXXXXX, XXXXXXX, XXXXXXX, KC_LENC, KC_RENC, XXXXXXX, QC_QUOT, KC_BSLS, KC_LCBR, KC_RCBR,     NAV,  KC_DEL,
+            XXXXXXX, QC_AGRV, QC_EGRV, QC_EAIG, KC_LSFT, XXXXXXX,                                     XXXXXXX,  HR_SLB,  HR_CLP,  HR_ARP,  HR_GRB, XXXXXXX,
+            XXXXXXX, XXXXXXX, XXXXXXX, QC_CCED, XXXXXXX, XXXXXXX, XXXXXXX, KC_LENC, KC_RENC, XXXXXXX, KC_BSLS, KC_QUOT, KC_LCBR, KC_RCBR,     NAV,  KC_DEL,
                                        XXXXXXX, XXXXXXX,  KC_ESC, COLEMAK,  KC_TAB,  KC_ENT, KC_BSPC,     NUM, XXXXXXX, XXXXXXX
             ),
     [_NAV] = LAYOUT(
@@ -55,11 +55,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 function_c_ced();
             }
             return true;
-        case QC_QUOT:
-            if (record -> event.pressed) {
-                function_quick_quote();
-            }
-            return false;
         case KC_LENC:
             if (record->tap.count && record->event.pressed) {
                 left_encoder_click();
