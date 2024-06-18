@@ -53,12 +53,12 @@ The keymap I use is available under [keyboards/splitkb/kyria/keymaps/tyosa](./ke
 
 # To-Do
 
-- [ ] Add caps word qmk feature
+- [x] Add caps word qmk feature -> not satisfying
 - [ ] Enhance display now that the microcontroller can handle the size
 - [ ] Add mouse keys
 - [x] Add music control -> right encoder next/prev/pause
 - [x] Add super quote on h tap dance
-- [ ] Find where to put caps lock
+- [x] Find where to put caps lock -> q tap dance
 - [ ] Play around with the repeat key
 - [ ] Play with other type of "alt-tab" : alt esc (no popup), alt grv (between instances)
 - [ ] Try out leader key
