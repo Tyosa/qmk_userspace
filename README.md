@@ -57,7 +57,7 @@ The keymap I use is available under [keyboards/splitkb/kyria/keymaps/tyosa](./ke
 - [ ] Enhance display now that the microcontroller can handle the size
 - [ ] Add mouse keys
 - [x] Add music control -> right encoder next/prev/pause
-- [ ] Add super quote on h tap dance
+- [x] Add super quote on h tap dance
 - [ ] Find where to put caps lock
 - [ ] Play around with the repeat key
 - [ ] Play with other type of "alt-tab" : alt esc (no popup), alt grv (between instances)
