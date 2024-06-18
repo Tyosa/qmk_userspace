@@ -2,6 +2,7 @@
 #include "tyosa.h"
 #include "encoder.h"
 #include "tap_dances.h"
+#include "macros.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK_DH] = LAYOUT(
@@ -36,35 +37,29 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case QC_EAIG:
             if (record->event.pressed) {
-                del_mods(MOD_MASK_SHIFT);
-                SEND_STRING(SS_TAP(X_QUOTE));
-                set_mods(mod_state);
-                SEND_STRING("e");
+                function_e_aig(mod_state);
             }
             return true;
         case QC_EGRV:
             if (record->event.pressed) {
-                del_mods(MOD_MASK_SHIFT);
-                SEND_STRING(SS_TAP(X_GRV));
-                set_mods(mod_state);
-                SEND_STRING("e");
+                function_e_grv(mod_state);
             }
             return true;
         case QC_AGRV:
             if (record->event.pressed) {
-                del_mods(MOD_MASK_SHIFT);
-                SEND_STRING(SS_TAP(X_GRV));
-                set_mods(mod_state);
-                SEND_STRING("a");
+                function_a_grv(mod_state);
             }
             return true;
         case QC_CCED:
             if (record->event.pressed) {
-                register_code(KC_RALT);
-                SEND_STRING(",");
-                unregister_code(KC_RALT);
+                function_c_ced();
             }
             return true;
+        case QC_QUOT:
+            if (record -> event.pressed) {
+                function_quick_quote();
+            }
+            return false;
         case KC_LENC:
             if (record->tap.count && record->event.pressed) {
                 left_encoder_click();
@@ -77,12 +72,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 right_encoder_click();
             } else if (record->event.pressed) {
                 right_encoder_hold();
-            }
-            return false;
-        case QC_QUOT:
-            if (record -> event.pressed) {
-                SEND_STRING(SS_TAP(X_QUOTE));
-                SEND_STRING(SS_TAP(X_SPC));
             }
             return false;
     }
