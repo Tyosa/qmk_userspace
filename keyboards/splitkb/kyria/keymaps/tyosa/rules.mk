@@ -3,7 +3,7 @@ CONVERT_TO=promicro_rp2040
 
 OLED_ENABLE = yes
 ENCODER_ENABLE = yes
-EXTRAFLAGS += -flto
+EXTRAFLAGS += -flto=auto
 LTO_ENABLE = yes
 WPM_ENABLE = yes
 DEFERRED_EXEC_ENABLE = yes
