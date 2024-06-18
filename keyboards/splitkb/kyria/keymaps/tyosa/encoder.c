@@ -9,6 +9,7 @@ enum left_encoder_mode {
 enum right_encoder_mode {
     RENC_TAB,           // alt tabbing
     RENC_PAGE,          // scroll half pages
+    RENC_MEDIA,         // media control
     RENC_NOOP
 };
 
@@ -34,7 +35,7 @@ void right_encoder_click(void) {
 }
 
 void right_encoder_hold(void) {
-    tap_code(KC_MUTE);
+    tap_code(KC_MEDIA_PLAY_PAUSE);
 }
 
 void left_encoder_oled(void) {
@@ -57,6 +58,9 @@ void right_encoder_oled(void) {
             break;
         case RENC_PAGE:
             oled_write_P(PSTR("Page scroll\n"), false);
+            break;
+        case RENC_MEDIA:
+            oled_write_P(PSTR("Media control\n"), false);
             break;
         default:
             break;
@@ -108,6 +112,13 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                     }
                     alt_tab_timer = timer_read();
                     tap_code16(S(KC_TAB));
+                }
+                return false;
+            case RENC_MEDIA:
+                if (clockwise) {
+                    tap_code(KC_MEDIA_NEXT_TRACK);
+                } else {
+                    tap_code(KC_MEDIA_PREV_TRACK);
                 }
                 return false;
             default:

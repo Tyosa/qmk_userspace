@@ -15,6 +15,7 @@ SRC += encoder.c
 SRC += oled.c
 SRC += luna.c
 SRC += tap_dances.c
+SRC += macros.c
 
 # AVR optimizations
 RGB_MATRIX_ENABLE = no
