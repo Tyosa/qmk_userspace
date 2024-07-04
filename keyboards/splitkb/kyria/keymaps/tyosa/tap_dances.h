@@ -13,19 +13,21 @@ enum tap_dance_id {
     TD_RPRN_ALT,
     TD_H_QUOTE,
     TD_Q_CAPS,
+    TD_F_SEARCH
 };
 
-#define  COM_MIN    TD(TD_COM_MIN)
-#define  DOT_UND    TD(TD_DOT_UND)
-#define  SLS_EXC    TD(TD_SLS_EXC)
-#define   C_COPY    TD(TD_C_COPY)
-#define  V_PASTE    TD(TD_V_PASTE)
-#define   X_CUTS    TD(TD_X_CUT)
-#define   Z_UNDO    TD(TD_Z_UNDO)
-#define   HR_CLP    TD(TD_LPRN_CTL)
-#define   HR_ARP    TD(TD_RPRN_ALT)
-#define  H_QUOTE    TD(TD_H_QUOTE)
-#define   Q_CAPS    TD(TD_Q_CAPS)
+#define COM_MIN TD(TD_COM_MIN)
+#define DOT_UND TD(TD_DOT_UND)
+#define SLS_EXC TD(TD_SLS_EXC)
+#define  C_COPY TD(TD_C_COPY)
+#define V_PASTE TD(TD_V_PASTE)
+#define  X_CUTS TD(TD_X_CUT)
+#define  Z_UNDO TD(TD_Z_UNDO)
+#define  HR_CLP TD(TD_LPRN_CTL)
+#define  HR_ARP TD(TD_RPRN_ALT)
+#define H_QUOTE TD(TD_H_QUOTE)
+#define  Q_CAPS TD(TD_Q_CAPS)
+#define F_SEARC TD(TD_F_SEARCH)
 
 // Actions for the TD_COM_MIN tap dance, comma on press and minus on hold
 void on_com_min(tap_dance_state_t *state, void *user_data);
@@ -81,3 +83,8 @@ void h_quote_reset(tap_dance_state_t *state, void *user_data);
 void on_q_caps(tap_dance_state_t *state, void *user_data);
 void q_caps_finished(tap_dance_state_t *state, void *user_data);
 void q_caps_reset(tap_dance_state_t *state, void *user_data);
+
+// Actions for the TD_F_SEARCH tap dance, f on press and Ctrl-F on hold
+void on_f_search(tap_dance_state_t *state, void *user_data);
+void f_search_finished(tap_dance_state_t *state, void *user_data);
+void f_search_reset(tap_dance_state_t *state, void *user_data);
