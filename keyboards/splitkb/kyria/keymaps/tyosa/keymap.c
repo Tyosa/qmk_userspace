@@ -6,7 +6,7 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK_DH] = LAYOUT(
-            XXXXXXX,  Q_CAPS,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, XXXXXXX,
+            XXXXXXX,  Q_CAPS,    KC_W, F_SEARC,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, XXXXXXX,
             XXXXXXX,   HR_GA,   HR_AR,   HR_CS,   HR_ST,    KC_G,                                        KC_M,   HR_SN,   HR_CE,   HR_AI,   HR_GO, XXXXXXX,
             XXXXXXX,  Z_UNDO,  X_CUTS,  C_COPY,    KC_D, V_PASTE, XXXXXXX, KC_LENC, KC_RENC, XXXXXXX,    KC_K, H_QUOTE, COM_MIN, DOT_UND, SLS_EXC,  KC_DEL,
                                        XXXXXXX, XXXXXXX,  KC_ESC, MEH_SPC,  KC_TAB,  KC_ENT, KC_BSPC,     SYM, XXXXXXX, XXXXXXX
@@ -79,11 +79,6 @@ void matrix_scan_user(void) {
       unregister_code(KC_LALT);
       is_alt_tab_active = false;
     }
-  }
-  if (get_highest_layer(layer_state) != _COLEMAK_DH) {
-      if (last_input_activity_elapsed() > LAYER_TIMEOUT) {
-          layer_move(_COLEMAK_DH);
-      }
   }
 }
 

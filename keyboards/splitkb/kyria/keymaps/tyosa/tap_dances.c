@@ -13,6 +13,7 @@ tap_dance_action_t tap_dance_actions[] = {
   [TD_RPRN_ALT] = ACTION_TAP_DANCE_FN_ADVANCED(on_rprn_alt, rprn_alt_finished, rprn_alt_reset),
   [TD_H_QUOTE] = ACTION_TAP_DANCE_FN_ADVANCED(on_h_quote, h_quote_finished, h_quote_reset),
   [TD_Q_CAPS] = ACTION_TAP_DANCE_FN_ADVANCED(on_q_caps, q_caps_finished, q_caps_reset),
+  [TD_F_SEARCH] = ACTION_TAP_DANCE_FN_ADVANCED(on_f_search, f_search_finished, f_search_reset),
 };
 
 typedef enum {
@@ -258,25 +259,7 @@ void on_q_caps(tap_dance_state_t *state, void *user_data) {
 }
 
 void q_caps_finished(tap_dance_state_t *state, void *user_data) {
-    dance_state.step = cur_dance(state);
-    switch (dance_state.step) {
-        case SINGLE_TAP:
-            register_code16(KC_Q);
-            break;
-        case SINGLE_HOLD:
-            tap_code16(KC_CAPS);
-            break;
-        case DOUBLE_TAP:
-            register_code16(KC_Q);
-            register_code16(KC_Q);
-            break;
-        case DOUBLE_SINGLE_TAP:
-            tap_code16(KC_Q);
-            register_code16(KC_Q);
-            break;
-        default :
-            break;
-    }
+    single_hold_or_tap_finished(state, KC_Q, KC_CAPS);
 }
 
 void q_caps_reset(tap_dance_state_t *state, void *user_data) {
@@ -294,4 +277,16 @@ void q_caps_reset(tap_dance_state_t *state, void *user_data) {
             break;
     }
     dance_state.step = NONE;
+}
+
+void on_f_search(tap_dance_state_t *state, void *user_data) {
+    on_single_hold_or_tap(state, KC_F);
+}
+
+void f_search_finished(tap_dance_state_t *state, void *user_data) {
+    single_hold_or_tap_finished(state, KC_F, C(KC_F));
+}
+
+void f_search_reset(tap_dance_state_t *state, void *user_data) {
+    single_hold_or_tap_reset(state, KC_F, C(KC_F));
 }
