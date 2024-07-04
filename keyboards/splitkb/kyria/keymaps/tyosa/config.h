@@ -27,8 +27,6 @@
 #define ONESHOT_TAP_TOGGLE 4
 #define ONESHOT_TIMEOUT 1500
 
-#define LAYER_TIMEOUT 3000
-
 // Bilateral combinations, following https://sunaku.github.io/home-row-mods.html
 #define BILATERAL_COMBINATIONS
 #define BILATERAL_COMBINATIONS_ALLOW_SAMESIDED_AFTER 200 /*ms*/
