@@ -30,47 +30,47 @@ enum tap_dance_id {
 #define F_SEARC TD(TD_F_SEARCH)
 
 // Actions for the TD_COM_MIN tap dance, comma on press and minus on hold
-void on_com_min(tap_dance_state_t *state, void *user_data);
+void com_min_tap(tap_dance_state_t *state, void *user_data);
 void com_min_finished(tap_dance_state_t *state, void *user_data);
 void com_min_reset(tap_dance_state_t *state, void *user_data);
 
 // Actions for the TD_DOT_UND tap dance, dot on press and underscore on hold
-void on_dot_und(tap_dance_state_t *state, void *user_data);
+void dot_und_tap(tap_dance_state_t *state, void *user_data);
 void dot_und_finished(tap_dance_state_t *state, void *user_data);
 void dot_und_reset(tap_dance_state_t *state, void *user_data);
 
 // Actions for the TD_SLS_EXC tap dance, slash on press and exclamation mark on hold
-void on_sls_exc(tap_dance_state_t *state, void *user_data);
+void sls_exc_tap(tap_dance_state_t *state, void *user_data);
 void sls_exc_finished(tap_dance_state_t *state, void *user_data);
 void sls_exc_reset(tap_dance_state_t *state, void *user_data);
 
 // Actions for the TD_C_COPY tap dance, c on press and Ctrl-C on hold
-void on_c_copy(tap_dance_state_t *state, void *user_data);
+void c_copy_tap(tap_dance_state_t *state, void *user_data);
 void c_copy_finished(tap_dance_state_t *state, void *user_data);
 void c_copy_reset(tap_dance_state_t *state, void *user_data);
 
 // Actions for the TD_V_PASTE tap dance, v on press and Ctrl-V on hold
-void on_v_paste(tap_dance_state_t *state, void *user_data);
+void v_paste_tap(tap_dance_state_t *state, void *user_data);
 void v_paste_finished(tap_dance_state_t *state, void *user_data);
 void v_paste_reset(tap_dance_state_t *state, void *user_data);
 
 // Actions for the TD_X_CUT tap dance, x on press and Ctrl-X on hold
-void on_x_cut(tap_dance_state_t *state, void *user_data);
+void x_cut_tap(tap_dance_state_t *state, void *user_data);
 void x_cut_finished(tap_dance_state_t *state, void *user_data);
 void x_cut_reset(tap_dance_state_t *state, void *user_data);
 
 // Actions for the TD_Z_UNDO tap dance, z on press and Ctrl-Z on hold
-void on_z_undo(tap_dance_state_t *state, void *user_data);
+void z_undo_tap(tap_dance_state_t *state, void *user_data);
 void z_undo_finished(tap_dance_state_t *state, void *user_data);
 void z_undo_reset(tap_dance_state_t *state, void *user_data);
 
 // Actions for the TD_LPRN_CTL tap dance, ( on press and Ctrl on hold
-void on_lprn_ctl(tap_dance_state_t *state, void *user_data);
+void lprn_ctl_tap(tap_dance_state_t *state, void *user_data);
 void lprn_ctl_finished(tap_dance_state_t *state, void *user_data);
 void lprn_ctl_reset(tap_dance_state_t *state, void *user_data);
 
 // Actions for the TD_RPRN_ALT tap dance, ) on press and Alt on hold
-void on_rprn_alt(tap_dance_state_t *state, void *user_data);
+void rprn_alt_tap(tap_dance_state_t *state, void *user_data);
 void rprn_alt_finished(tap_dance_state_t *state, void *user_data);
 void rprn_alt_reset(tap_dance_state_t *state, void *user_data);
 
@@ -85,6 +85,6 @@ void q_caps_finished(tap_dance_state_t *state, void *user_data);
 void q_caps_reset(tap_dance_state_t *state, void *user_data);
 
 // Actions for the TD_F_SEARCH tap dance, f on press and Ctrl-F on hold
-void on_f_search(tap_dance_state_t *state, void *user_data);
+void f_search_tap(tap_dance_state_t *state, void *user_data);
 void f_search_finished(tap_dance_state_t *state, void *user_data);
 void f_search_reset(tap_dance_state_t *state, void *user_data);
