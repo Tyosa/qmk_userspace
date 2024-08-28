@@ -1,4 +1,8 @@
 { pkgs ?  import <nixpkgs> {} }:
 pkgs.mkShell {
-  packages = [ pkgs.qmk pkgs.keymapviz ];
+  packages = with pkgs; [
+    qmk
+    keymapviz
+    clang-tools
+  ];
 }

@@ -6,28 +6,34 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK_DH] = LAYOUT(
-            XXXXXXX,  Q_CAPS,    KC_W, F_SEARC,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, XXXXXXX,
-            XXXXXXX,   HR_GA,   HR_AR,   HR_CS,   HR_ST,    KC_G,                                        KC_M,   HR_SN,   HR_CE,   HR_AI,   HR_GO, XXXXXXX,
+            XXXXXXX,  Q_CAPS,    KC_W, F_SEARC,    KC_P,    KC_B,                                        KC_J,    L_FF,    KC_U,    KC_Y, KC_SCLN, XXXXXXX,
+              MOUSE,   HR_GA,   HR_AR,   HR_CS,   HR_ST,    KC_G,                                        KC_M,   HR_SN,   HR_CE,   HR_AI,   HR_GO, XXXXXXX,
             XXXXXXX,  Z_UNDO,  X_CUTS,  C_COPY,    KC_D, V_PASTE, XXXXXXX, KC_LENC, KC_RENC, XXXXXXX,    KC_K, H_QUOTE, COM_MIN, DOT_UND, SLS_EXC,  KC_DEL,
                                        XXXXXXX, XXXXXXX,  KC_ESC, MEH_SPC,  KC_TAB,  KC_ENT, KC_BSPC,     SYM, XXXXXXX, XXXXXXX
             ),
     [_SYM] = LAYOUT(
             XXXXXXX, KC_PERC,   KC_AT, KC_HASH,  KC_DLR, XXXXXXX,                                      KC_INS, KC_AMPR, KC_ASTR,  KC_GRV, KC_CIRC, XXXXXXX,
-            XXXXXXX, QC_AGRV, QC_EGRV, QC_EAIG, KC_LSFT, XXXXXXX,                                     XXXXXXX,  HR_SLB,  HR_CLP,  HR_ARP,  HR_GRB, XXXXXXX,
+              MOUSE, QC_AGRV, QC_EGRV, QC_EAIG, KC_LSFT, XXXXXXX,                                     XXXXXXX,  HR_SLB,  HR_CLP,  HR_ARP,  HR_GRB, XXXXXXX,
             XXXXXXX, XXXXXXX, XXXXXXX, QC_CCED, XXXXXXX, XXXXXXX, XXXXXXX, KC_LENC, KC_RENC, XXXXXXX, KC_BSLS, KC_QUOT, KC_LCBR, KC_RCBR,     NAV,  KC_DEL,
                                        XXXXXXX, XXXXXXX,  KC_ESC, COLEMAK,  KC_TAB,  KC_ENT, KC_BSPC,     NUM, XXXXXXX, XXXXXXX
             ),
     [_NAV] = LAYOUT(
-            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-            XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                                     KC_HOME, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT,  KC_END,
-            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LENC, KC_RENC, XXXXXXX, XXXXXXX, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,  KC_DEL,
+            XXXXXXX, XXXXXXX, KC_BTN3, KC_BTN2, KC_BTN1, XXXXXXX,                                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+              MOUSE, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                                     KC_HOME, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT,  KC_END,
+            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LENC, KC_RENC, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  KC_DEL,
                                        XXXXXXX, XXXXXXX,  KC_ESC, COLEMAK,  KC_TAB,  KC_ENT, KC_BSPC,     SYM, XXXXXXX, XXXXXXX
             ),
     [_NUM] = LAYOUT(
             XXXXXXX,   KC_F9,  KC_F10,  KC_F11,  KC_F12, XXXXXXX,                                     KC_ASTR,    KC_7,    KC_8,    KC_9, KC_MINS, XXXXXXX,
-            XXXXXXX,  HR_GF5,  HR_AF6,  HR_CF7,  HR_SF8, XXXXXXX,                                      KC_DOT,   HR_S4,   HR_C5,   HR_A6,  HR_GEQ, XXXXXXX,
+              MOUSE,  HR_GF5,  HR_AF6,  HR_CF7,  HR_SF8, XXXXXXX,                                      KC_DOT,   HR_S4,   HR_C5,   HR_A6,  HR_GEQ, XXXXXXX,
             XXXXXXX,   KC_F1,   KC_F2,   KC_F3,   KC_F4, XXXXXXX, XXXXXXX, KC_LENC, KC_RENC, XXXXXXX,    KC_0,    KC_1,    KC_2,    KC_3,     NAV,  KC_DEL,
                                        XXXXXXX, XXXXXXX,  KC_ESC, COLEMAK,  KC_TAB,  KC_ENT, KC_BSPC,     SYM, XXXXXXX, XXXXXXX
+            ),
+    [_MOUSE] = LAYOUT(
+            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+              MOUSE, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                                     XXXXXXX, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, XXXXXXX,
+            XXXXXXX, XXXXXXX, XXXXXXX, KC_BTN2, KC_BTN3, XXXXXXX, XXXXXXX, KC_LENC, KC_RENC, XXXXXXX, XXXXXXX, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,  KC_DEL,
+                                       XXXXXXX, XXXXXXX,  KC_ESC, KC_BTN1,  KC_TAB,  KC_ENT, KC_BSPC,     SYM, XXXXXXX, XXXXXXX
             ),
 };
 
