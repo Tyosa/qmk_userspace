@@ -13,7 +13,8 @@ enum tap_dance_id {
     TD_RPRN_ALT,
     TD_H_QUOTE,
     TD_Q_CAPS,
-    TD_F_SEARCH
+    TD_F_SEARCH,
+    TD_L_FF
 };
 
 #define COM_MIN TD(TD_COM_MIN)
@@ -28,6 +29,7 @@ enum tap_dance_id {
 #define H_QUOTE TD(TD_H_QUOTE)
 #define  Q_CAPS TD(TD_Q_CAPS)
 #define F_SEARC TD(TD_F_SEARCH)
+#define    L_FF TD(TD_L_FF)
 
 // Actions for the TD_COM_MIN tap dance, comma on press and minus on hold
 void com_min_tap(tap_dance_state_t *state, void *user_data);
@@ -88,3 +90,8 @@ void q_caps_reset(tap_dance_state_t *state, void *user_data);
 void f_search_tap(tap_dance_state_t *state, void *user_data);
 void f_search_finished(tap_dance_state_t *state, void *user_data);
 void f_search_reset(tap_dance_state_t *state, void *user_data);
+
+// Actions for the TD_L_FF tap dance, l on press and Ctrl-L on hold
+void l_ff_tap(tap_dance_state_t *state, void *user_data);
+void l_ff_finished(tap_dance_state_t *state, void *user_data);
+void l_ff_reset(tap_dance_state_t *state, void *user_data);

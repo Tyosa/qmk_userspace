@@ -14,6 +14,7 @@ tap_dance_action_t tap_dance_actions[] = {
   [TD_H_QUOTE] = ACTION_TAP_DANCE_FN_ADVANCED(on_h_quote, h_quote_finished, h_quote_reset),
   [TD_Q_CAPS] = ACTION_TAP_DANCE_FN_ADVANCED(on_q_caps, q_caps_finished, q_caps_reset),
   [TD_F_SEARCH] = ACTION_TAP_DANCE_FN_ADVANCED(f_search_tap, f_search_finished, f_search_reset),
+  [TD_L_FF] = ACTION_TAP_DANCE_FN_ADVANCED(l_ff_tap, l_ff_finished, l_ff_reset),
 };
 
 /* Typedefs */
@@ -110,7 +111,7 @@ void single_hold_or_tap_reset(tap_dance_state_t *state, uint16_t tap_code, uint1
  *   - else it will tap the TAP keycode
  *   - in case of a tap then hold, hold TAP
  */
-#define GENERATE_SINGLE_HOLD_OR_TAP(NAME, TAP, HOLD)                        \
+#define GENERATE_SINGLE_HOLD_OR_TAP(NAME, TAP, HOLD)                       \
     void NAME##_tap(tap_dance_state_t *state, void *user_data) {           \
         on_single_hold_or_tap(state, TAP);                                 \
     }                                                                      \
@@ -131,6 +132,7 @@ GENERATE_SINGLE_HOLD_OR_TAP(z_undo, KC_Z, C(KC_Z))
 GENERATE_SINGLE_HOLD_OR_TAP(lprn_ctl, KC_LPRN, KC_LCTL)
 GENERATE_SINGLE_HOLD_OR_TAP(rprn_alt, KC_RPRN, KC_LALT)
 GENERATE_SINGLE_HOLD_OR_TAP(f_search, KC_F, C(KC_F))
+GENERATE_SINGLE_HOLD_OR_TAP(l_ff, KC_L, C(KC_L))
 
 /* Specific behavior methods */
 
