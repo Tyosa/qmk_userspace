@@ -14,7 +14,7 @@ enum right_encoder_mode {
 };
 
 enum left_encoder_mode left_encoder = LENC_VOL;
-enum right_encoder_mode right_encoder = RENC_TAB;
+enum right_encoder_mode right_encoder = RENC_PAGE;
 
 void left_encoder_click(void) {
     left_encoder++;
@@ -92,9 +92,9 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
         switch (right_encoder) {
             case RENC_PAGE:
                 if (clockwise) {
-                    tap_code(KC_PGDN);
+                    tap_code(KC_WH_D);
                 } else {
-                    tap_code(KC_PGUP);
+                    tap_code(KC_WH_U);
                 }
                 return false;
             case RENC_TAB:
