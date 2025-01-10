@@ -15,7 +15,7 @@ SRC += tyosa.c
 SRC += encoder.c
 SRC += oled.c
 SRC += luna.c
-SRC += tap_dances.c
+INTROSPECTION_KEYMAP_C += tap_dances.c
 SRC += macros.c
 
 # AVR optimizations
