@@ -1,11 +1,12 @@
 #BOOTLOADER=rp2040
+BOOTLOADER=caterina
 #CONVERT_TO=promicro_rp2040
 
-OLED_ENABLE = yes
+# OLED_ENABLE = yes
 ENCODER_ENABLE = yes
 EXTRAFLAGS += -flto=auto
 LTO_ENABLE = yes
-WPM_ENABLE = yes
+# WPM_ENABLE = yes
 DEFERRED_EXEC_ENABLE = yes
 TAP_DANCE_ENABLE = yes
 MOUSEKEY_ENABLE = yes
@@ -13,8 +14,8 @@ MOUSEKEY_ENABLE = yes
 # Inclusions
 SRC += tyosa.c
 SRC += encoder.c
-SRC += oled.c
-SRC += luna.c
+# SRC += oled.c
+# SRC += luna.c
 INTROSPECTION_KEYMAP_C += tap_dances.c
 SRC += macros.c
 
