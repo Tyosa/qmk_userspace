@@ -1,10 +1,14 @@
 #include <stdint.h>
 #include "keycode_config.h"
+#include "keyboard.h"
+#include "keycodes.h"
 #include "quantum.h"
 #include "tyosa.h"
 #include "encoder.h"
 #include "tap_dances.h"
 #include "macros.h"
+#include "painter/qp.h"
+#include "noto11.qff.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK_DH] = LAYOUT(
@@ -20,7 +24,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                        _______, _______,  KC_ESC, COLEMAK,  KC_TAB,  KC_ENT, KC_BSPC,     NUM, XXXXXXX, XXXXXXX
             ),
     [_NAV] = LAYOUT(
-            XXXXXXX, XXXXXXX, KC_BTN3, KC_BTN2, KC_BTN1, XXXXXXX,                                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+            XXXXXXX, XXXXXXX, KC_BTN3, KC_BTN2, KC_BTN1, XXXXXXX,                                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
             XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                                     KC_HOME, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT,  KC_END,
             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     NUM, KC_LENC, KC_RENC, COLEMAK, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  KC_DEL,
                                        _______, _______,  KC_ESC, COLEMAK,  KC_TAB,  KC_ENT, KC_BSPC,     SYM, XXXXXXX, XXXXXXX
@@ -106,3 +110,29 @@ uint8_t mod_config(uint8_t mod) {
     return mod;
 }
 #endif
+
+static painter_device_t display;
+static painter_font_handle_t font;
+void keyboard_post_init_kb(void) {
+    display = qp_sh1106_make_i2c_device(128, 64, 0x3C);
+    qp_init(display, QP_ROTATION_180);
+    font = qp_load_font_mem(font_noto11);
+    qp_drawtext(display, 0, 0, font, "Hello !");
+}
+
+void housekeeping_task_user(void) {
+    // qp_rect(display, 0, 0, 50, 50, 255, 255, 255, true);
+    // qp_flush(display);
+    // static const char *text = "Hi";
+    // // int16_t width = qp_textwidth(font, text);
+    // qp_drawtext(display, 51, 51, font, text);
+}
+
+void suspend_power_down_user(void) {
+    qp_power(display, false);
+}
+
+void suspend_wakeup_init_user(void) {
+    qp_power(display, true);
+}
+
