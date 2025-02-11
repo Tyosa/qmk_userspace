@@ -38,34 +38,34 @@ void right_encoder_hold(void) {
     tap_code(KC_MEDIA_PLAY_PAUSE);
 }
 
-void left_encoder_oled(void) {
-    switch (left_encoder) {
-        case LENC_VOL:
-            oled_write_P(PSTR("Volume\n"), false);
-            break;
-        case LENC_WORD:
-            oled_write_P(PSTR("Word\n"), false);
-            break;
-        default:
-            break;
-    }
-}
-
-void right_encoder_oled(void) {
-    switch (right_encoder) {
-        case RENC_TAB:
-            oled_write_P(PSTR("Alt - Tab\n"), false);
-            break;
-        case RENC_PAGE:
-            oled_write_P(PSTR("Page scroll\n"), false);
-            break;
-        case RENC_MEDIA:
-            oled_write_P(PSTR("Media control\n"), false);
-            break;
-        default:
-            break;
-    }
-}
+// void left_encoder_oled(void) {
+//     switch (left_encoder) {
+//         case LENC_VOL:
+//             oled_write_P(PSTR("Volume\n"), false);
+//             break;
+//         case LENC_WORD:
+//             oled_write_P(PSTR("Word\n"), false);
+//             break;
+//         default:
+//             break;
+//     }
+// }
+//
+// void right_encoder_oled(void) {
+//     switch (right_encoder) {
+//         case RENC_TAB:
+//             oled_write_P(PSTR("Alt - Tab\n"), false);
+//             break;
+//         case RENC_PAGE:
+//             oled_write_P(PSTR("Page scroll\n"), false);
+//             break;
+//         case RENC_MEDIA:
+//             oled_write_P(PSTR("Media control\n"), false);
+//             break;
+//         default:
+//             break;
+//     }
+// }
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
