@@ -11,6 +11,7 @@
 #define CHORDAL_HOLD
 
 // Space optimizations
+#define NO_ACTION_ONESHOT
 #define LAYER_STATE_8BIT
 
 #define DISABLE_LEADER

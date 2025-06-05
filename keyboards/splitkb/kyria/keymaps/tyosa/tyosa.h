@@ -6,7 +6,8 @@ enum layers {
     _NAV,
     _SYM,
     _NUM,
-    _MOUSE
+    _MOUSE,
+    _GAME
 };
 
 enum custom_keycodes {
@@ -51,6 +52,7 @@ enum custom_keycodes {
 #define      SYM    TO(_SYM)
 #define      NUM    TO(_NUM)
 #define      NAV    TO(_NAV)
+#define     GAME    TO(_GAME)
 #define    MOUSE    TG(_MOUSE)
 
 extern bool is_alt_tab_active;

@@ -1,4 +1,5 @@
 #pragma once
+#include <stdint.h>
 
 /* Quick quote instead of having to tap quote twice */
 void function_quick_quote(void);
