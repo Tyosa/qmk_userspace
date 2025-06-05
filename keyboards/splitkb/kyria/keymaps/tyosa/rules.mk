@@ -13,7 +13,6 @@ TAP_DANCE_ENABLE = yes
 
 QUANTUM_PAINTER_ENABLE = yes
 QUANTUM_PAINTER_DRIVERS += sh1106_i2c
-SRC += noto11.qff.c
 
 # Inclusions
 SRC += tyosa.c

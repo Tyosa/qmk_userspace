@@ -1,14 +1,13 @@
 #include <stdint.h>
-#include "keycode_config.h"
+#include QMK_KEYBOARD_H
+// #include "keycode_config.h"
 #include "keyboard.h"
 #include "keycodes.h"
-#include "quantum.h"
 #include "tyosa.h"
 #include "encoder.h"
 #include "tap_dances.h"
 #include "macros.h"
 #include "painter/qp.h"
-#include "noto11.qff.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK_DH] = LAYOUT(
@@ -112,12 +111,12 @@ uint8_t mod_config(uint8_t mod) {
 #endif
 
 static painter_device_t display;
-static painter_font_handle_t font;
+// static painter_font_handle_t font;
 void keyboard_post_init_kb(void) {
     display = qp_sh1106_make_i2c_device(128, 64, 0x3C);
     qp_init(display, QP_ROTATION_180);
-    font = qp_load_font_mem(font_noto11);
-    qp_drawtext(display, 0, 0, font, "Hello !");
+    // font = qp_load_font_mem(font_noto11);
+    // qp_drawtext(display, 0, 0, font, "Hello !");
 }
 
 void housekeeping_task_user(void) {
