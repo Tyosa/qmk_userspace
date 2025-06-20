@@ -1,5 +1,4 @@
 #include <stdint.h>
-#include "keycode_config.h"
 #include "quantum.h"
 #include "tyosa.h"
 #include "encoder.h"
