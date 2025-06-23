@@ -1,6 +1,7 @@
 {
-    "userspace_version": "1.0",
+    "userspace_version": "1.1",
     "build_targets": [
-        ["splitkb/kyria/rev3", "tyosa"]
+        ["splitkb/kyria/rev3", "tyosa"],
+        ["geigeigeist/klor", "tyosa"]
     ]
 }
