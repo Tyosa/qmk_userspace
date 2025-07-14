@@ -13,14 +13,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <stdint.h>
 #include "keycodes.h"
-#include "keymap_us.h"
-#include "process_combo.h"
-#include "progmem.h"
 #include "quantum.h"
 #include "klor.h"
-#include "quantum_keycodes.h"
 
 enum layers {
     _COLEMAK=0,
@@ -86,10 +81,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_NAV] = LAYOUT_saegewerk(
     //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-       _______,  _______,  _______,  _______,  _______,                       KC_INS,   KC_LBRC,  KC_LPRN,  KC_RPRN,  KC_RBRC,
+       XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,                       KC_INS,   KC_LBRC,  KC_LPRN,  KC_RPRN,  KC_RBRC,
        _______,  _______,  _______,  _______,  _______,                       KC_DEL,   KC_LEFT,  KC_DOWN,  KC_UP,    KC_RIGHT,
-       _______,  _______,  _______,  _______,  _______,  _______,   _______,  _______,  KC_HOME,  KC_LCBR,  KC_RCBR,  KC_END,
-                           _______,  _______,  _______,                       _______,  _______,  _______
+       XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  _______,   _______,  XXXXXXX,  KC_HOME,  KC_LCBR,  KC_RCBR,  KC_END,
+                           _______,  _______,  XXXXXXX,                       _______,  _______,  _______
     ),
     [_NUM] = LAYOUT_saegewerk(
     //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
