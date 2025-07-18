@@ -7,3 +7,4 @@
 #define CHORDAL_HOLD
 #define FLOW_TAP 150
 
+#define COMBO_STRICT_TIMER

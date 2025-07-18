@@ -1,7 +1,16 @@
 layout: {qmk_keyboard: geigeigeist/klor, layout_name: LAYOUT_saegewerk}
 layers:
   Colemak:
-  - [Q, W, F, P, B, J, L, U, Y, ;]
+  - - Q
+    - W
+    - {t: F, h: Ctrl+F}
+    - P
+    - B
+    - J
+    - L
+    - U
+    - Y
+    - ;
   - - {t: A, h: Gui}
     - {t: R, h: Alt}
     - {t: S, h: Ctrl}
@@ -12,26 +21,35 @@ layers:
     - {t: E, h: Ctrl}
     - {t: I, h: Alt}
     - {t: O, h: Gui}
-  - [Z, X, C, D, V, '$$mdi:volume-off$$', '$$mdi:play-pause$$', K, H, ',']
+  - - {t: Z, h: Ctrl+Z}
+    - {t: X, h: Ctrl+X}
+    - {t: C, h: Ctrl+C}
+    - D
+    - {t: V, h: Ctrl+V}
+    - '$$mdi:volume-off$$'
+    - '$$mdi:play-pause$$'
+    - K
+    - H
+    - ','
   - - .
     - /
     - $$mdi:keyboard-tab$$
-    - $$mdi:sync$$
     - {t: '$$mdi:keyboard-space$$', h: Nav}
-    - $$mdi:backspace-outline$$
     - $$mdi:autorenew$$
+    - $$mdi:sync$$
+    - $$mdi:backspace-outline$$
     - $$mdi:arrow-left-bottom$$
   Sym:
   - - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
     - '@'
+    - '#'
     - '%'
+    - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - '&'
     - {t: ▽, type: trans}
     - '`'
     - ^
-    - {t: ▽, type: trans}
   - - À
     - È
     - É
@@ -61,12 +79,12 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
   Nav:
-  - - ''
-    - ''
-    - ''
-    - ''
-    - ''
-    - INS
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - Insert
     - '['
     - (
     - )
@@ -81,14 +99,14 @@ layers:
     - $$mdi:chevron-down$$
     - $$mdi:chevron-up$$
     - $$mdi:chevron-right$$
-  - - ''
-    - ''
-    - ''
-    - ''
-    - ''
-    - ''
-    - ''
-    - ''
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
     - Home
     - '{'
   - - '}'
@@ -178,13 +196,12 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
 combos:
-    # - {l: ["Colemak"], p: [10,19], k: "Caps word", draw_separate: true}
-    # - {l: ["Colemak"], p: [13,16], k: "Num", draw_separate: true}
-    # - {l: ["Colemak"], p: [12,17], k: "Sym", draw_separate: true}
-  - {l: ["Colemak"], p: [10,19], k: "Caps word", draw_separate: false, a: "top", offset: 4}
+  - {l: ["Colemak"], p: [10,19], k: "Caps word", draw_separate: false, a: "top", offset: 4.5}
+  - {l: ["Colemak"], p: [11,18], k: "Fn", draw_separate: false, a: "top", offset: 3}
   - {l: ["Colemak"], p: [12,17], k: "Sym", draw_separate: false, a: "top", offset: 2}
   - {l: ["Colemak"], p: [13,16], k: "Num", draw_separate: false, a: "top", offset: 1.5}
-  - {l: ["Colemak"], p: [3,4], k: "ESC", draw_separate: false, a: "mid"}
+  - {l: ["Colemak"], p: [3,6], k: "ESC", draw_separate: false, a: "mid"}
   - {l: ["Colemak"], p: [17,18], k: "'\"", draw_separate: false, a: "mid"}
   - {l: ["Colemak"], p: [28,29], k: "-", draw_separate: false, a: "mid"}
-  - {l: ["Colemak"], p: [29,30], k: "-", draw_separate: false, a: "mid"}
+  - {l: ["Colemak"], p: [29,30], k: "_", draw_separate: false, a: "mid"}
+  - {l: ["Sym","Num","Fn"], p: [34,35], k: "Colemak", draw_separate: false, a: "mid"}
