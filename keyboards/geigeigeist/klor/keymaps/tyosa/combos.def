@@ -1,0 +1,12 @@
+DEFAULT_REF_LAYER(_COLEMAK)
+
+COMB(PL_ESC,         KC_ESC,     KC_P, KC_L)
+COMB(GUI_CAPS,       CW_TOGG,    GUI_A, GUI_O)
+COMB(COMMDOT_QUOT,   QUOT,       KC_COMM, KC_DOT)
+COMB(HCOMM_MIN,      KC_MINUS,   KC_H, KC_COMM)
+
+COMB(GO_BASE,        BASE,       SPC_NAV, KC_BSPC)
+COMB(SHT_NAV,        NAV,        SHT_T, SHT_N)
+COMB(CTL_SYM,        SYM,        CTL_S, CTL_E)
+COMB(QSCLN_FN,       FN,         KC_Q, KC_SCLN)
+COMB(WY_NUM,         NUM,        KC_W, KC_Y)

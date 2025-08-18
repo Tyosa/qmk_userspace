@@ -13,59 +13,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <stdint.h>
-#include "keycodes.h"
-#include "keymap_us.h"
-#include "process_combo.h"
-#include "progmem.h"
 #include "quantum.h"
 #include "klor.h"
-
-enum layers {
-    _COLEMAK=0,
-    _SYM,
-    _NAV,
-    _NUM,
-    _FN,
-};
-
-enum custom_keys {
-    CCED=SAFE_RANGE, // ç
-    EACU,            // é
-    EGRV,            // è
-    AGRV,            // à
-    EURO,            // €
-    QUOT,            // Quick quote
-};
-
-// Layer navigation
-#define BASE    TO(_COLEMAK)
-#define SYM     OSL(_SYM)
-#define SPC_NAV LT(_NAV, KC_SPC)
-#define NUM     TO(_NUM)
-#define FN      TO(_FN)
-
-// Left hand home-row mods
-#define GUI_A   MT(MOD_LGUI, KC_A)
-#define ALT_R   MT(MOD_LALT, KC_R)
-#define CTL_S   MT(MOD_LCTL, KC_S)
-#define SHT_T   MT(MOD_LSFT, KC_T)
-#define MEH_G   MT(MOD_MEH, KC_G)
-
-// Right hand home-row mods
-#define MEH_M   MT(MOD_MEH, KC_M)
-#define SHT_N   MT(MOD_RSFT, KC_N)
-#define CTL_E   MT(MOD_LCTL, KC_E)
-#define ALT_I   MT(MOD_LALT, KC_I)
-#define GUI_O   MT(MOD_LGUI, KC_O)
+#include "aliases.h"
+#include "g/keymap_combo.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK] = LAYOUT_saegewerk(
     //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-       KC_Q,     KC_W,     KC_F,     KC_P,     KC_B,                          KC_J,     KC_L,     KC_U,     KC_Y,     KC_SCLN,
+       KC_Q,     KC_W,     CTL_F,    KC_P,     KC_B,                          KC_J,     KC_L,     KC_U,     KC_Y,     KC_SCLN,
        GUI_A,    ALT_R,    CTL_S,    SHT_T,    MEH_G,                         MEH_M,    SHT_N,    CTL_E,    ALT_I,    GUI_O,
-       KC_Z,     KC_X,     KC_C,     KC_D,     KC_V,     KC_MUTE,   KC_MPLY,  KC_K,     KC_H,     KC_COMMA, KC_DOT,   KC_SLASH,
-                           KC_TAB,   SPC_NAV,  QK_REP,                        QK_AREP,  KC_BSPC,  KC_ENTER
+       CTL_Z,    CTL_X,    CTL_C,    KC_D,     CTL_V,     KC_MUTE,   KC_MPLY, KC_K,     KC_H,     KC_COMMA, KC_DOT,   KC_SLASH,
+                           KC_TAB,   SPC_NAV,  QK_REP,                        QK_REP,   KC_BSPC,  KC_ENTER
     ),
     [_SYM] = LAYOUT_saegewerk(
     //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
@@ -183,50 +142,36 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 /*===================================================================================================================*/
-/*     COMBOS                                                                                                        */
+/*     ENCODERS                                                                                                      */
 /*===================================================================================================================*/
-enum combos {
-    PL_ESC,
-    GUI_CAPS,
-    EI_QUOT,
-    HCOMM_MIN,
-    COMMDOT_UNDS,
-    CTL_SYM,
-    SHT_NUM,
-    FN_ALT,
-    RETURN_BASE,
-};
-
-uint8_t combo_ref_from_layer(uint8_t layer){
-    switch (get_highest_layer(layer_state)){
-        // case _DVORAK: return _QWERTY;
-        case _NAV: return _NAV;
-        default: return _COLEMAK;
+bool encoder_update_user(uint8_t index, bool clockwise) {
+    if (index == 0) {
+        if (IS_LAYER_ON(_NAV)) {
+            if (clockwise) {
+                tap_code(KC_MNXT);
+            } else {
+                tap_code(KC_MPRV);
+            }
+        } else {
+            if (clockwise) {
+                tap_code(KC_VOLU);
+            } else {
+                tap_code(KC_VOLD);
+            }
+        }
+    } else if (index == 1) {
+        if (clockwise) {
+            tap_code(MS_WHLD);
+        } else {
+            tap_code(MS_WHLU);
+        }
     }
+    return false;
 }
 
-const uint16_t PROGMEM pl_esc_combo[] = {KC_P, KC_L, COMBO_END};
-const uint16_t PROGMEM gui_caps_combo[] = {GUI_A, GUI_O, COMBO_END};
-const uint16_t PROGMEM ei_quot_combo[] = {CTL_E, ALT_I, COMBO_END};
-const uint16_t PROGMEM hcomm_min_combo[] = {KC_H, KC_COMM, COMBO_END};
-const uint16_t PROGMEM commdot_unds_combo[] = {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM ctl_sym[] = {CTL_E, CTL_S, COMBO_END};
-const uint16_t PROGMEM sht_num[] = {SHT_T, SHT_N, COMBO_END};
-const uint16_t PROGMEM fn_alt[] = {ALT_R, ALT_I, COMBO_END};
-const uint16_t PROGMEM return_base[] = {QK_REP, QK_AREP, COMBO_END};
-
-combo_t key_combos[] = {
-    [PL_ESC] = COMBO(pl_esc_combo, KC_ESC),
-    [GUI_CAPS] = COMBO(gui_caps_combo, CW_TOGG),
-    [EI_QUOT] = COMBO(ei_quot_combo, QUOT),
-    [HCOMM_MIN] = COMBO(hcomm_min_combo, KC_MINUS),
-    [COMMDOT_UNDS] = COMBO(commdot_unds_combo, KC_UNDERSCORE),
-    [CTL_SYM] = COMBO(ctl_sym, SYM),
-    [SHT_NUM] = COMBO(sht_num, NUM),
-    [FN_ALT] = COMBO(fn_alt, FN),
-    [RETURN_BASE] = COMBO(return_base, BASE),
-};
-
+/*===================================================================================================================*/
+/*     TAP-HOLD                                                                                                      */
+/*===================================================================================================================*/
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
     LAYOUT_saegewerk(
         'L', 'L', 'L', 'L', 'L',            'R', 'R', 'R', 'R', 'R',
@@ -234,4 +179,14 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
         'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
                   'L', 'L', 'L',            'R', 'R', 'R'
     );
+
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case GUI_A:
+        case GUI_O:
+            return TAPPING_TERM + 500;
+        default:
+            return TAPPING_TERM;
+    }
+}
 
