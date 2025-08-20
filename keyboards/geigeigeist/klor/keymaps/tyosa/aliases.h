@@ -8,6 +8,7 @@ enum custom_keys {
     AGRV,            // à
     EURO,            // €
     QUOT,            // Quick quote
+    NUMWORD,
 };
 
 enum layers {

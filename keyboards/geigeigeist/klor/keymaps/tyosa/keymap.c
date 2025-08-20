@@ -16,6 +16,7 @@
 #include "quantum.h"
 #include "klor.h"
 #include "aliases.h"
+#include "num_word.h"
 #include "g/keymap_combo.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -58,6 +59,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 uint8_t mod_state;
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    // First try processing numword, and return false only if numword returned false, else go on
+    if (!process_record_num_word(keycode, record)) return false;
+
+    // Misc keycode handling
     mod_state = get_mods();
     switch (keycode) {
         case CCED:

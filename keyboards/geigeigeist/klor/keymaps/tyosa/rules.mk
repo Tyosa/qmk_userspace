@@ -10,3 +10,4 @@ EXTRAFLAGS += -flto=auto
 LTO_ENABLE = yes
 DEFERRED_EXEC_ENABLE = yes
 
+SRC += num_word.c
