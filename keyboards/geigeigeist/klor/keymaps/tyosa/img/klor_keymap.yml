@@ -36,19 +36,20 @@ layers:
     - $$mdi:keyboard-tab$$
     - {t: '$$mdi:keyboard-space$$', h: Nav}
     - $$mdi:autorenew$$
-    - $$mdi:sync$$
+    - $$mdi:autorenew$$
+#    - $$mdi:sync$$
     - $$mdi:backspace-outline$$
     - $$mdi:arrow-left-bottom$$
   Sym:
-  - - {t: ▽, type: trans}
+  - - '`'
     - '@'
     - '#'
     - '%'
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - '&'
-    - {t: ▽, type: trans}
-    - '`'
+    - '['
+    - ']'
     - ^
   - - À
     - È
@@ -57,24 +58,24 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - $$mdi:apple-keyboard-shift$$
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - '('
+    - ')'
     - '*'
   - - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - '!'
     - Ç
     - $
     - €
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - ''''
-    - '#'
     - {t: ▽, type: trans}
-  - - '!'
+    - ''''
+    - '{'
+  - - '}'
     - \
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - Colemak
+    - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -85,10 +86,10 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - Insert
-    - '['
-    - (
-    - )
-    - ']'
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -108,8 +109,8 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - Home
-    - '{'
-  - - '}'
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
     - End
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -152,7 +153,7 @@ layers:
     - /
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - Colemak
+    - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -204,4 +205,4 @@ combos:
   - {l: ["Colemak"], p: [17,18], k: "'\"", draw_separate: false, a: "mid"}
   - {l: ["Colemak"], p: [28,29], k: "-", draw_separate: false, a: "mid"}
   - {l: ["Colemak"], p: [29,30], k: "_", draw_separate: false, a: "mid"}
-  - {l: ["Sym","Num","Fn"], p: [34,35], k: "Colemak", draw_separate: false, a: "mid"}
+  - {l: ["Sym","Num","Fn"], p: [33,36], k: "Colemak", draw_separate: false, a: "mid"}

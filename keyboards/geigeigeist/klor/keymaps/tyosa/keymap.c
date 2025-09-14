@@ -29,23 +29,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_SYM] = LAYOUT_saegewerk(
     //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-       _______,  KC_AT,    KC_HASH,  KC_PERC,  _______,                       _______,  KC_AMPR,  _______,  KC_GRV,   KC_CIRC,
-       AGRV,     EGRV,     EACU,     KC_LSFT,  _______,                       _______,  KC_LSFT,  _______,  _______,  KC_ASTR,
-       _______,  _______,  CCED,     KC_DLR,   EURO,     _______,   _______,  KC_QUOT,  _______,  _______,  KC_EXLM,  KC_BSLS,
+       KC_GRV,   KC_AT,    KC_HASH,  KC_PERC,  _______,                       _______,  KC_AMPR,  KC_LBRC,  KC_RBRC,  KC_CIRC,
+       AGRV,     EGRV,     EACU,     KC_LSFT,  _______,                       _______,  KC_LSFT,  KC_LPRN,  KC_RPRN,  KC_ASTR,
+       _______,  KC_EXLM,  CCED,     KC_DLR,   EURO,     _______,   _______,  _______,  KC_QUOT,  KC_LCBR,  KC_RCBR,  KC_BSLS,
                            _______,  _______,  _______,                       _______,  _______,  _______
     ),
     [_NAV] = LAYOUT_saegewerk(
     //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-       _______,  _______,  _______,  _______,  _______,                       KC_INS,   KC_LBRC,  KC_LPRN,  KC_RPRN,  KC_RBRC,
+       _______,  _______,  _______,  _______,  _______,                       KC_INS,   _______,  _______,  _______,  _______,
        _______,  _______,  _______,  _______,  _______,                       KC_DEL,   KC_LEFT,  KC_DOWN,  KC_UP,    KC_RIGHT,
-       _______,  _______,  _______,  _______,  _______,  _______,   _______,  XXXXXXX,  KC_HOME,  KC_LCBR,  KC_RCBR,  KC_END,
+       _______,  _______,  _______,  _______,  _______,  _______,   _______,  _______,  KC_HOME,  _______,  _______,  KC_END,
                            _______,  _______,  _______,                       _______,  _______,  _______
     ),
     [_NUM] = LAYOUT_saegewerk(
     //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-       _______,  _______,  _______,  _______,  _______,                       KC_EQUAL, KC_7,     KC_8,     KC_9,     KC_MINUS,
-       _______,  _______,  _______,  _______,  _______,                       KC_DOT,   KC_4,     KC_5,     KC_6,     KC_ASTR,
-       _______,  _______,  _______,  _______,  _______,  _______,   _______,  KC_0,     KC_1,     KC_2,     KC_3,     KC_SLASH,
+       _______,  _______,  _______,  _______,  _______,                       KC_EQUAL, KC_7,     KC_8,     KC_9,     KC_PMNS,
+       _______,  _______,  _______,  _______,  _______,                       KC_DOT,   KC_4,     KC_5,     KC_6,     KC_PAST,
+       _______,  _______,  _______,  _______,  _______,  _______,   _______,  KC_0,     KC_1,     KC_2,     KC_3,     KC_PSLS,
                            _______,  _______,  _______,                       _______,  _______,  _______
     ),
     [_FN] = LAYOUT_saegewerk(

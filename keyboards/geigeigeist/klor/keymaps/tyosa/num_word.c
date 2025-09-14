@@ -122,7 +122,8 @@ bool process_record_num_word(uint16_t keycode, const keyrecord_t *record) {
 
     if (should_terminate_num_word(keycode, record)) {
         disable_num_word();
+    } else {
+        num_word_timer = timer_read();
     }
-
     return true;
 }
