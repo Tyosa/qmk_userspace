@@ -2,9 +2,10 @@ BOOTLOADER=rp2040
 CONVERT_TO=rp2040_ce
 
 COMBO_ENABLE=yes
+VPATH+=keyboards/gboards
+
 REPEAT_KEY_ENABLE=yes
 CAPS_WORD_ENABLE=yes
-VPATH+=keyboards/gboards
 
 EXTRAFLAGS += -flto=auto
 LTO_ENABLE = yes
